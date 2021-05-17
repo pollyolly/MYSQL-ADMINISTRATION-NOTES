@@ -9,7 +9,7 @@ GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%';
 ```
 SELECT User, Host FROM mysql.user;
 ```
-### Show database;
+### SHOW DATABASES
 ```
 SHOW DATABASES;
 ```

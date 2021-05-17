@@ -5,11 +5,11 @@
 SELECT User, Host FROM mysql.user;
 GRANT ALL PRIVILEGES ON databasename.* TO 'johnmark'@'10.20.20.%';
 ```
-###SHOW USERS
+### SHOW USERS
 ```
 SELECT User, Host FROM mysql.user;
 ```
-#Show database;
+### Show database;
 ```
 SHOW DATABASES;
 ```

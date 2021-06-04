@@ -20,8 +20,8 @@ $ sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEW_USER_PASSWORD';
 
 //If not work -new
-sudo service mysql stop
-sudo mysqld_safe --skip-grant-tables&
+$sudo service mysql stop
+$sudo mysqld_safe --skip-grant-tables&
 
 UPDATE mysql.user SET authentication_string=null WHERE User='root';
 mysql -u root

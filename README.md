@@ -9,6 +9,10 @@ GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%'; //set user pri
 ```
 SELECT User, Host FROM mysql.user;
 ```
+### CREATE NEW USER
+```
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+```
 ### SHOW DATABASES
 ```
 SHOW DATABASES;

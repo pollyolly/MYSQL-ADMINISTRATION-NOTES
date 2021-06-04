@@ -13,18 +13,32 @@ SELECT User, Host FROM mysql.user;
 ```
 SHOW DATABASES;
 ```
-### SETUP MYSQL ROOT PASSWORD
+### SETUP MYSQL ROOT/USER PASSWORD
 ```
-//If no password
+//If not work -new
+$ sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEW_USER_PASSWORD';
+
+//If not work -new
+sudo service mysql stop
+sudo mysqld_safe --skip-grant-tables&
+
+UPDATE mysql.user SET authentication_string=null WHERE User='root';
+mysql -u root
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
+
+//If not work above-old
 mysql -u root -p
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'NEW_USER_PASSWORD';
 
-//If above not work
+//If not work above-old
 UPDATE mysql.user SET authentication_string = PASSWORD('NEW_USER_PASSWORD')
 WHERE User = 'root' AND Host = 'localhost';
 
-//If above all not work
+//If not work above-old
 $ mysqld --initialize-insecure
 $ mysql -u root --skip-password
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'NEW_USER_PASSWORD';
+
+
 ```

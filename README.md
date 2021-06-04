@@ -51,3 +51,9 @@ SELECT table_schema "DB Name",
 FROM information_schema.tables 
 GROUP BY table_schema; 
 ```
+### IMPORT / EXPORT
+```
+mysqldump -uroot -p database > database.sql //export
+
+mysql -root -p database < database.sql //import
+```

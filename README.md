@@ -60,7 +60,9 @@ mysql -root -p database < database.sql //import
 ### INSTALL AND UNINSTALL
 ```
 Install
-$sudo apt-get install mysql
+$sudo apt update
+$sudo apt install mysql-server
+$sudo mysql_secure_installation
 
 Uninstall
 $service mysql stop

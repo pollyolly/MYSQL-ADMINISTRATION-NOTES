@@ -57,3 +57,15 @@ mysqldump -uroot -p database > database.sql //export
 
 mysql -root -p database < database.sql //import
 ```
+### INSTALL AND UNINSTALL
+```
+Install
+$sudo apt-get install mysql
+
+Uninstall
+$service mysql stop
+$sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+$sudo rm -rf /etc/mysql /var/lib/mysql
+$sudo apt autoremove  (remove unncessary packages)
+$sudo apt autoclean   (remove apt cache)
+```

@@ -71,3 +71,11 @@ $sudo rm -rf /etc/mysql /var/lib/mysql
 $sudo apt autoremove  (remove unncessary packages)
 $sudo apt autoclean   (remove apt cache)
 ```
+### TROUBLESHOOTING
+```
+Access denied root@localtion
+- You need to reset the root password
+PHP MySqli error
+- Make sure to install php7.2-mysql
+- Enable PHP mysqli extension
+```

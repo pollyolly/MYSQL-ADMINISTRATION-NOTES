@@ -13,6 +13,10 @@ SELECT User, Host FROM mysql.user;
 ```
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 ```
+### DROP USER
+```
+DROP USER 'jeffrey'@'localhost';
+```
 ### SHOW DATABASES
 ```
 SHOW DATABASES;

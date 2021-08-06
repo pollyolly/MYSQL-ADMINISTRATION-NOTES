@@ -13,6 +13,12 @@ SELECT User, Host FROM mysql.user;
 ```
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 ```
+### CREATE USER WITH REMOTE CONNECTION
+```
+CREATE USER 'johndoe'@'10.20.20.%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%';
+FLUSH PRIVILLEGES;
+```
 ### DROP USER
 ```
 DROP USER 'jeffrey'@'localhost';

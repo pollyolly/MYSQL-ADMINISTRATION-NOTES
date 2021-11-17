@@ -19,6 +19,25 @@ CREATE USER 'johndoe'@'10.20.20.%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%';
 FLUSH PRIVILLEGES;
 ```
+### SETUP REMOTE CONNECTION MYSQL
+```
+CREATE USER 'user'@'10.20.14.%' IDENTIFIED BY 'samplePassword';
+GRANT ALL ON <dbname>.* TO 'user'@'10.20.14.%';
+GRANT RELOAD ON *.* TO 'user'@'10.20.14.%';
+FLUSH PRIVILEGES;
+FLUSH HOSTS;
+
+VM IP Address: 10.20.14.% through VPN etc.
+
+nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+#bind-address   = 127.0.0.1
+bind-address    = <vm private ip>
+
+Test connection by specifying host IP.
+
+mysql -h <vmIP> -uuser -p
+```
 ### DROP USER
 ```
 DROP USER 'jeffrey'@'localhost';

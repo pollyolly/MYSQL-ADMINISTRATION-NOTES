@@ -101,6 +101,12 @@ $sudo rm -rf /etc/mysql /var/lib/mysql
 $sudo apt autoremove  (remove unncessary packages)
 $sudo apt autoclean   (remove apt cache)
 ```
+### BIN LOGs
+```
+delete bin_log if occupying large space or storage.
+/var/lib/mysql
+
+```
 ### TROUBLESHOOTING
 ```
 Access denied root@localtion

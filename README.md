@@ -107,6 +107,11 @@ delete bin_log if occupying large space or storage.
 /var/lib/mysql
 
 ```
+### MySQL Repair DB
+```
+REPAIR TABLE mysql.db;
+REPAIR TABLE mysql.user;
+```
 ### TROUBLESHOOTING
 ```
 Access denied root@localtion

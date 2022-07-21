@@ -85,7 +85,7 @@ GROUP BY table_schema;
 ```
 mysqldump -uroot -p database > database.sql //export
 
-mysql -root -p database < database.sql //import
+mysql -uroot -p database < database.sql //import
 ```
 ### INSTALL AND UNINSTALL
 ```

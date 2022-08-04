@@ -48,8 +48,7 @@ SHOW DATABASES;
 ```
 ### SETUP MYSQL ROOT/USER PASSWORD
 ```
-//If not work -new
-// Worked on MYSQL Ver 8.0.25-0ubuntu0.20.04.1
+// WORKED on MYSQL Ver 8.0.25-0ubuntu0.20.04.1
 $ sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEW_USER_PASSWORD';
 
@@ -130,6 +129,9 @@ REPAIR TABLE mysql.user;
 | root             | localhost | mysql_native_password |
 +------------------+-----------+-----------------------+
 
+- Your password does not satisfy the current policy requirements
+  - mysql> UNINSTALL COMPONENT 'file://component_validate_password'; //Remove
+  
 - Access denied root@localtion
   - You need to reset the root password
 - PHP MySqli error

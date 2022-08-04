@@ -114,15 +114,21 @@ REPAIR TABLE mysql.user;
 ```
 ### TROUBLESHOOTING
 ```
-- Able to login without using password: auth_socket
+- Root without a PASSWORD: auth_socket
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+  SELECT User,host,plugin from mysql.user;
  User             | host      | plugin                |
 +------------------+-----------+-----------------------+
 | root             | localhost | auth_socket           |
 +------------------+-----------+-----------------------+
-Change to: mysql_native_password
-UPDATE mysql.user set plugin='mysql_native_password' where user = 'root';
+- Root using a PASSWORD
+  UPDATE mysql.user set plugin='mysql_native_password' where user = 'root';
++------------------+-----------+-----------------------+
+| User             | host      | plugin                |
++------------------+-----------+-----------------------+
+| root             | localhost | mysql_native_password |
++------------------+-----------+-----------------------+
 
 - Access denied root@localtion
   - You need to reset the root password

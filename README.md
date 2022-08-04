@@ -114,9 +114,19 @@ REPAIR TABLE mysql.user;
 ```
 ### TROUBLESHOOTING
 ```
-Access denied root@localtion
-- You need to reset the root password
-PHP MySqli error
-- Make sure to install php7.2-mysql
-- Enable PHP mysqli extension
+- Able to login without using password: auth_socket
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+ User             | host      | plugin                |
++------------------+-----------+-----------------------+
+| root             | localhost | auth_socket           |
++------------------+-----------+-----------------------+
+Change to: mysql_native_password
+UPDATE mysql.user set plugin='mysql_native_password' where user = 'root';
+
+- Access denied root@localtion
+  - You need to reset the root password
+- PHP MySqli error
+  - Make sure to install php7.2-mysql
+  - Enable PHP mysqli extension
 ```

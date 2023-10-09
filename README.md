@@ -6,21 +6,21 @@ SELECT User, Host FROM mysql.user; //check current user@host/localhost/ip
 GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%'; //set user privillege
 ```
 ### SHOW USERS
-```
+```sql
 SELECT User, Host FROM mysql.user;
 ```
 ### CREATE NEW USER
-```
+```sql
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 ```
 ### CREATE USER WITH REMOTE CONNECTION
-```
+```sql
 CREATE USER 'johndoe'@'10.20.20.%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%';
 FLUSH PRIVILEGES;
 ```
 ### SETUP REMOTE CONNECTION MYSQL
-```
+```sql
 CREATE USER 'user'@'10.20.14.%' IDENTIFIED BY 'samplePassword';
 GRANT ALL ON <dbname>.* TO 'user'@'10.20.14.%';
 GRANT RELOAD ON *.* TO 'user'@'10.20.14.%';
@@ -39,15 +39,15 @@ Test connection by specifying host IP.
 mysql -h <vmIP> -uuser -p
 ```
 ### DROP USER
-```
+```sql
 DROP USER 'jeffrey'@'localhost';
 ```
 ### SHOW DATABASES
-```
+```sql
 SHOW DATABASES;
 ```
 ### SETUP MYSQL ROOT/USER PASSWORD
-```
+```vim
 // WORKED on MYSQL Ver 8.0.25-0ubuntu0.20.04.1
 $ sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEW_USER_PASSWORD';
@@ -74,20 +74,20 @@ $ mysql -u root --skip-password
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'NEW_USER_PASSWORD';
 ```
 ### SHOW DATABASE SIZES IN MegaBytes
-```
+```sql
 SELECT table_schema "DB Name",
         ROUND(SUM(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB" 
 FROM information_schema.tables 
 GROUP BY table_schema; 
 ```
 ### IMPORT / EXPORT
-```
+```vim
 mysqldump -uroot -p database > database.sql //export
 
 mysql -uroot -p database < database.sql //import
 ```
 ### INSTALL AND UNINSTALL
-```
+```vim
 Install
 $sudo apt update
 $sudo apt install mysql-server
@@ -101,18 +101,18 @@ $sudo apt autoremove  (remove unncessary packages)
 $sudo apt autoclean   (remove apt cache)
 ```
 ### BIN LOGs
-```
+```vim
 delete bin_log if occupying large space or storage.
 /var/lib/mysql
 
 ```
 ### MySQL Repair DB
-```
+```sql
 REPAIR TABLE mysql.db;
 REPAIR TABLE mysql.user;
 ```
 ### TROUBLESHOOTING
-```
+```vim
 - Root without a PASSWORD: auth_socket
   ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
 

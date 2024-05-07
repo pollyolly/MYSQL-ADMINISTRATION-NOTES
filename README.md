@@ -82,9 +82,9 @@ GROUP BY table_schema;
 ```
 ### IMPORT / EXPORT
 ```vim
-mysqldump -uroot -p database > database.sql //export
+$mysqldump -uroot -p database > database.sql //export
 
-mysql -uroot -p database < database.sql //import
+$mysql -uroot -p database < database.sql //import
 ```
 ### INSTALL AND UNINSTALL
 ```vim

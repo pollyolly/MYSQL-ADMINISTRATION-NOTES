@@ -1,7 +1,7 @@
 # MYSQL-SYSTEM-ADMINISTRATION
 
 ### GRANT USER PRIVILEGE ON DATABASE
-```
+```sql
 SELECT User, Host FROM mysql.user; //check current user@host/localhost/ip
 GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%'; //set user privillege
 ```

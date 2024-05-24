@@ -138,3 +138,5 @@ REPAIR TABLE mysql.user;
   - Make sure to install php7.2-mysql
   - Enable PHP mysqli extension
 ```
+### REFERENCES
+[MySQL Remote Connection with MySQL Workbench on a Virtual Private Server](https://medium.com/@johnmark_76235/mysql-remote-connection-with-mysql-workbench-on-a-virtual-private-server-2e18d8ff78e4)

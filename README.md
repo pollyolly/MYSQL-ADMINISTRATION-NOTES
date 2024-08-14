@@ -32,7 +32,8 @@ VM IP Address: 10.20.14.% through VPN etc.
 nano /etc/mysql/mysql.conf.d/mysqld.cnf
 
 #bind-address   = 127.0.0.1
-bind-address    = <vm private ip>
+# bind-address    = 162.220.160.183 # VM IP Address, use 0.0.0.0 if not working
+bind-address = 0.0.0.0 #bind any address
 
 Test connection by specifying host IP.
 

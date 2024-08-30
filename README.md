@@ -13,6 +13,10 @@ SELECT User, Host FROM mysql.user;
 ```sql
 CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
 ```
+### DROP USER
+```sql
+DROP USER 'imuser'@'localhost';
+```
 ### CREATE USER WITH REMOTE CONNECTION
 ```sql
 CREATE USER 'johndoe'@'10.20.20.%' IDENTIFIED BY 'password';

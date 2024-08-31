@@ -34,10 +34,15 @@ nano /etc/mysql/mysql.conf.d/mysqld.cnf
 #bind-address   = 127.0.0.1
 # bind-address    = 162.220.160.183 # VM IP Address, use 0.0.0.0 if not working
 bind-address = 0.0.0.0 #bind any address
-
+```
 Test connection by specifying host IP.
-
-mysql -h <vmIP> -uuser -p
+```
+$mysql -h <vmIP> -uuser -p
+```
+```
+Allow Port
+```vim
+$sudo ufw allow 3306/tcp
 ```
 ### DROP USER
 ```sql

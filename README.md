@@ -88,13 +88,14 @@ $mysqldump -uroot -p database > database.sql //export
 $mysql -uroot -p database < database.sql //import
 ```
 ### INSTALL AND UNINSTALL
-```vim
 Install
+```vim
 $sudo apt update
 $sudo apt install mysql-server
 $sudo mysql_secure_installation
-
+```
 Uninstall
+```vim
 $service mysql stop
 $sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
 $sudo rm -rf /etc/mysql /var/lib/mysql

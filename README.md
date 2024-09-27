@@ -149,15 +149,9 @@ PHP MySqli error
   - Make sure to install php7.2-mysql
   - Enable PHP mysqli extension
 ```
-Error: Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
+For M1 Installation
 ```
-$mysql_config --socket
-#/tmp/mysql.sock
-
-$which mysql_config
-#/opt/homebrew/bin/mysql_config
-
-
+https://medium.com/@johnmark_76235/setup-php-nginx-and-php-fpm-on-m1-macbook-aeaea14d2675
 ```
 ### REFERENCES
 [MySQL Remote Connection with MySQL Workbench on a Virtual Private Server](https://medium.com/@johnmark_76235/mysql-remote-connection-with-mysql-workbench-on-a-virtual-private-server-2e18d8ff78e4)

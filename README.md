@@ -144,7 +144,7 @@ Access denied root@localtion
 ```
 You need to reset the root password
 ```
-- PHP MySqli error
+PHP MySqli error
 ```
   - Make sure to install php7.2-mysql
   - Enable PHP mysqli extension

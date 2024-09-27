@@ -151,6 +151,12 @@ PHP MySqli error
 ```
 Error: Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
 ```
+$mysql_config --socket
+#/tmp/mysql.sock
+
+$which mysql_config
+#/opt/homebrew/bin/mysql_config
+
 
 ```
 ### REFERENCES

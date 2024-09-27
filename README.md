@@ -119,8 +119,8 @@ REPAIR TABLE mysql.db;
 REPAIR TABLE mysql.user;
 ```
 ### TROUBLESHOOTING
+Root without a PASSWORD: auth_socket
 ```vim
-- Root without a PASSWORD: auth_socket
   ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
 
   SELECT User,host,plugin from mysql.user;
@@ -135,15 +135,23 @@ REPAIR TABLE mysql.user;
 +------------------+-----------+-----------------------+
 | root             | localhost | mysql_native_password |
 +------------------+-----------+-----------------------+
-
-- Your password does not satisfy the current policy requirements
-  - mysql> UNINSTALL COMPONENT 'file://component_validate_password'; //Remove
-  
-- Access denied root@localtion
-  - You need to reset the root password
+```
+Your password does not satisfy the current policy requirements
+```
+mysql> UNINSTALL COMPONENT 'file://component_validate_password'; //Remove
+```
+Access denied root@localtion
+```
+You need to reset the root password
+```
 - PHP MySqli error
+```
   - Make sure to install php7.2-mysql
   - Enable PHP mysqli extension
+```
+Error: Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
+```
+
 ```
 ### REFERENCES
 [MySQL Remote Connection with MySQL Workbench on a Virtual Private Server](https://medium.com/@johnmark_76235/mysql-remote-connection-with-mysql-workbench-on-a-virtual-private-server-2e18d8ff78e4)

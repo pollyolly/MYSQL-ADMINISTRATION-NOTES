@@ -150,8 +150,8 @@ PHP MySqli error
   - Enable PHP mysqli extension
 ```
 For M1 Installation
-```
-https://medium.com/@johnmark_76235/setup-php-nginx-and-php-fpm-on-m1-macbook-aeaea14d2675
-```
+
+[M1 Installation PHP, NginX and MySQL](https://medium.com/@johnmark_76235/setup-php-nginx-and-php-fpm-on-m1-macbook-aeaea14d2675)
+
 ### REFERENCES
 [MySQL Remote Connection with MySQL Workbench on a Virtual Private Server](https://medium.com/@johnmark_76235/mysql-remote-connection-with-mysql-workbench-on-a-virtual-private-server-2e18d8ff78e4)

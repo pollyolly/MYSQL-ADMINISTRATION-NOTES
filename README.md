@@ -52,32 +52,15 @@ DROP USER 'imuser'@'localhost';
 ```sql
 SHOW DATABASES;
 ```
-### SETUP MYSQL ROOT/USER PASSWORD
+### RESET MYSQL ROOT PASSWORD
 ```vim
-// WORKED on MYSQL Ver 8.0.25-0ubuntu0.20.04.1
-$ sudo mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEW_USER_PASSWORD';
-
-//If not work -new
-$sudo service mysql stop
-$sudo mysqld_safe --skip-grant-tables&
-
-UPDATE mysql.user SET authentication_string=null WHERE User='root';
-mysql -u root
-ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
-
-//If not work above-old
-mysql -u root -p
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'NEW_USER_PASSWORD';
-
-//If not work above-old
-UPDATE mysql.user SET authentication_string = PASSWORD('NEW_USER_PASSWORD')
-WHERE User = 'root' AND Host = 'localhost';
-
-//If not work above-old
-$ mysqld --initialize-insecure
-$ mysql -u root --skip-password
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'NEW_USER_PASSWORD';
+$service mysql stop
+$mysqld_safe --skip-grant-tables &
+$mkdir /var/run/mysqld
+$chown mysql:mysql /var/run/mysqld
+```
+```vim
+UPDATE mysql.user SET authentication_string = 'NEW_USER_PASSWORD' WHERE User = 'root' AND Host = 'localhost';
 ```
 ### SHOW DATABASE SIZES IN MegaBytes
 ```sql

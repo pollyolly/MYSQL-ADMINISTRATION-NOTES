@@ -58,12 +58,12 @@ $service mysql stop
 $mysqld_safe --skip-grant-tables &
 ```
 mysqld_safe Directory '/var/run/mysqld' for UNIX socket file don't exists.
-```
+```vim
 $mkdir /var/run/mysqld
 $chown mysql:mysql /var/run/mysqld
 ```
 mysqld_safe A mysqld process already exists
-```
+```vim
 $ps aux | grep mysqld
 #mysql
 $kill 648303 

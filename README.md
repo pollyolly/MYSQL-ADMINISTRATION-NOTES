@@ -76,6 +76,9 @@ exit;
 $mysql -u root
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
 ```
+```vim
+$mysqladmin -uroot -p shutdown
+```
 ### SHOW DATABASE SIZES IN MegaBytes
 ```sql
 SELECT table_schema "DB Name",

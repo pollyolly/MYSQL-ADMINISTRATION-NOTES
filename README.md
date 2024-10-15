@@ -56,8 +56,17 @@ SHOW DATABASES;
 ```vim
 $service mysql stop
 $mysqld_safe --skip-grant-tables &
+```
+mysqld_safe Directory '/var/run/mysqld' for UNIX socket file don't exists.
+```
 $mkdir /var/run/mysqld
 $chown mysql:mysql /var/run/mysqld
+```
+mysqld_safe A mysqld process already exists
+```
+$ps aux | grep mysqld
+#mysql
+$kill 648303 
 ```
 ```vim
 UPDATE mysql.user SET authentication_string = 'NEW_USER_PASSWORD' WHERE User = 'root' AND Host = 'localhost';

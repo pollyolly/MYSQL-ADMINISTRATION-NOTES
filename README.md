@@ -68,7 +68,13 @@ $ps aux | grep mysqld
 $kill 648303 
 ```
 ```vim
-UPDATE mysql.user SET authentication_string = 'NEW_USER_PASSWORD' WHERE User = 'root' AND Host = 'localhost';
+UPDATE mysql.user SET authentication_string=null WHERE User='root';
+FLUSH PRIVILEGES;
+exit;
+```
+```vim
+$mysql -u root
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
 ```
 ### SHOW DATABASE SIZES IN MegaBytes
 ```sql

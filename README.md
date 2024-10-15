@@ -39,7 +39,6 @@ Test connection by specifying host IP.
 ```
 $mysql -h <vmIP> -uuser -p
 ```
-```
 Allow Port
 ```vim
 $sudo ufw allow 3306/tcp

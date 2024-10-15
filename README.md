@@ -62,7 +62,7 @@ mysqld_safe Directory '/var/run/mysqld' for UNIX socket file don't exists.
 $mkdir /var/run/mysqld
 $chown mysql:mysql /var/run/mysqld
 ```
-mysqld_safe A mysqld process already exists
+mysqld_safe A mysqld process already exists or unable to service mysql start
 ```vim
 $ps aux | grep mysqld
 #mysql

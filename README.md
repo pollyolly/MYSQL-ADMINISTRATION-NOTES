@@ -68,6 +68,9 @@ $ps aux | grep mysqld
 $kill 648303 
 ```
 ```vim
+$mysql
+```
+```vim
 UPDATE mysql.user SET authentication_string=null WHERE User='root';
 FLUSH PRIVILEGES;
 exit;

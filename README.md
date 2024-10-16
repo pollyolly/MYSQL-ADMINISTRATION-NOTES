@@ -64,7 +64,7 @@ $chown mysql:mysql /var/run/mysqld
 mysqld_safe A mysqld process already exists or unable to service mysql start
 ```vim
 $ps aux | grep mysqld
-#mysql
+#mysql 648303
 $kill 648303 
 ```
 ```vim

@@ -111,10 +111,13 @@ $sudo apt autoremove  (remove unncessary packages)
 $sudo apt autoclean   (remove apt cache)
 ```
 ### BIN LOGs
+Delete old binlog if occupying large storage.
 ```vim
-delete bin_log if occupying large space or storage.
-/var/lib/mysql
-
+$rm -r /var/lib/mysql/binlog.000001
+```
+Binlogs are records of all changes in DB use to revert back.
+```
+/var/lib/mysql/binlog.000003
 ```
 ### MySQL Repair DB
 ```sql

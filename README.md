@@ -104,13 +104,19 @@ $sudo mysql_secure_installation
 ```
 ```vim
 $mysql
+```
+for Latest and secured authentication plugin use caching_sha2_password
+```vim
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
-mysql> exit;
 ```
 or for MySQL old versions compatibility use mysql_native_password plugin for authentication
 ```vim
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+```vim
+mysql> FLUSH PRIVILEGES;
 mysql> exit;
+$service mysql restart
 ```
 Check available authentication plugins
 ```vim

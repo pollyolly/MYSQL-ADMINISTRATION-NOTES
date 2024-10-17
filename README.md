@@ -114,7 +114,8 @@ mysql> exit;
 ```
 Check available authentication plugins
 ```vim
-SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS;
+SELECT PLUGIN_TYPE, PLUGIN_STATUS, PLUGIN_NAME FROM INFORMATION_SCHEMA.PLUGINS;
+/* caching_sha2_password, mysql_native_password, auth_socket, sha256_password */
 ```
 Uninstall
 ```vim

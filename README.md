@@ -146,17 +146,21 @@ REPAIR TABLE mysql.db;
 REPAIR TABLE mysql.user;
 ```
 ### TROUBLESHOOTING
-Root without a PASSWORD: auth_socket
+Root password using Unix User Credentials (auth_socket)
 ```vim
-  ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
-
-  SELECT User,host,plugin from mysql.user;
- User             | host      | plugin                |
+ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+/* auth_socket, caching_sha2_password, mysql_native_password, sha256_password */
+SELECT User,host,plugin from mysql.user where User = 'root';
++------------------+-----------+-----------------------+
+| User             | host      | plugin                |
 +------------------+-----------+-----------------------+
 | root             | localhost | auth_socket           |
 +------------------+-----------+-----------------------+
-- Root using a PASSWORD
-  UPDATE mysql.user set plugin='mysql_native_password' where user = 'root';
+```
+Root password using old password authentication plugin (mysql_native_password) for backward compatibility
+```
+UPDATE mysql.user set plugin='mysql_native_password' where User = 'root';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 +------------------+-----------+-----------------------+
 | User             | host      | plugin                |
 +------------------+-----------+-----------------------+
@@ -173,8 +177,8 @@ You need to reset the root password
 ```
 PHP MySqli error
 ```
-  - Make sure to install php7.2-mysql
-  - Enable PHP mysqli extension
+- Make sure to install php7.2-mysql
+- Enable PHP mysqli extension
 ```
 For M1 Installation
 

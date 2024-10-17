@@ -137,7 +137,7 @@ Delete old binlog if occupying large storage.
 $rm -r /var/lib/mysql/binlog.000001
 ```
 Binlogs are records of all changes in DB use to revert back.
-```
+```vim
 /var/lib/mysql/binlog.000003
 ```
 ### MySQL Repair DB

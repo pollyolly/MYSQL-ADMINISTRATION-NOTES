@@ -2,8 +2,8 @@
 
 ### GRANT USER PRIVILEGE ON DATABASE
 ```sql
-SELECT User, Host FROM mysql.user; //check current user@host/localhost/ip
-GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%'; //set user privillege
+SELECT User, Host FROM mysql.user; /* check current user@host/localhost/ip */
+GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%'; /* set user privillege */
 ```
 ### SHOW USERS
 ```sql
@@ -119,7 +119,7 @@ mysql> exit;
 $service mysql restart
 ```
 Check available authentication plugins
-```vim
+```sql
 SELECT PLUGIN_TYPE, PLUGIN_STATUS, PLUGIN_NAME FROM INFORMATION_SCHEMA.PLUGINS;
 /* caching_sha2_password, mysql_native_password, auth_socket, sha256_password */
 ```

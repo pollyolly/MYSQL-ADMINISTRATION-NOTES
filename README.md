@@ -102,6 +102,10 @@ $sudo apt update
 $sudo apt install mysql-server
 $sudo mysql_secure_installation
 ```
+```vim
+$mysql
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
+```
 Uninstall
 ```vim
 $service mysql stop

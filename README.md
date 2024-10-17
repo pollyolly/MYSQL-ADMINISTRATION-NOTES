@@ -105,6 +105,16 @@ $sudo mysql_secure_installation
 ```vim
 $mysql
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
+mysql> exit;
+```
+or for MySQL old versions compatibility use mysql_native_password plugin for authentication
+```vim
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+mysql> exit;
+```
+Check available authentication plugins
+```vim
+SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS;
 ```
 Uninstall
 ```vim

@@ -11,7 +11,7 @@ SELECT User, Host FROM mysql.user;
 ```
 ### CREATE NEW USER
 ```sql
-CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'newuser'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
 ```
 ### CREATE USER WITH REMOTE CONNECTION
 ```sql

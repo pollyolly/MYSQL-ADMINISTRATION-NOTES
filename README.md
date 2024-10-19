@@ -159,6 +159,7 @@ $vi /etc/mysql/mysql.conf.d/mysqld.cnf
 #Reduce memory usage by adding 
 [mysqld]
 table_definition_cache = 200
+table_open_cache = 215
 ```
 ### TROUBLESHOOTING
 Root password using Unix User Credentials (auth_socket)

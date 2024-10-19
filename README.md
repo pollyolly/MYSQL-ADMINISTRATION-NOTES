@@ -149,6 +149,17 @@ REPAIR TABLE mysql.user;
 ```
 $mysqld --validate-config
 ```
+### MySQL Consuming Large Memory
+```
+$service mysql status
+#398M memory used
+```
+$vi /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+#Reduce memory usage by adding 
+[mysqld]
+table_definition_cache = 200
+```
 ### TROUBLESHOOTING
 Root password using Unix User Credentials (auth_socket)
 ```vim

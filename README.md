@@ -145,6 +145,10 @@ Binlogs are records of all changes in DB use to revert back.
 REPAIR TABLE mysql.db;
 REPAIR TABLE mysql.user;
 ```
+### Validate MySQL Configs
+```
+$mysqld --validate-config
+```
 ### TROUBLESHOOTING
 Root password using Unix User Credentials (auth_socket)
 ```vim

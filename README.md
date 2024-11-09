@@ -174,7 +174,7 @@ SELECT User,host,plugin from mysql.user where User = 'root';
 +------------------+-----------+-----------------------+
 ```
 Root password using old password authentication plugin (mysql_native_password) for backward compatibility
-```
+```vim
 UPDATE mysql.user set plugin='mysql_native_password' where User = 'root';
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 +------------------+-----------+-----------------------+

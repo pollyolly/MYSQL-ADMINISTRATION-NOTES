@@ -45,6 +45,7 @@ $sudo ufw allow 3306/tcp
 ```
 ### DROP USER
 ```sql
+SELECT user, host FROM mysql.user;
 DROP USER 'imuser'@'localhost';
 ```
 ### SHOW DATABASES

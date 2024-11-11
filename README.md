@@ -72,6 +72,7 @@ $mysql
 ```
 ```vim
 UPDATE mysql.user SET authentication_string=null WHERE User='root';
+UPDATE mysql.user SET plugin='caching_sha2_password' WHERE User='root';
 FLUSH PRIVILEGES;
 exit;
 ```

@@ -70,9 +70,9 @@ $kill 648303
 ```vim
 $mysql
 ```
-```vim
+```sql
 UPDATE mysql.user SET authentication_string=null WHERE User='root';
-UPDATE mysql.user SET plugin='caching_sha2_password' WHERE User='root';
+UPDATE mysql.user SET plugin='caching_sha2_password' WHERE User='root'; /* Fix Plugin 'auth_socket' is not loaded */
 FLUSH PRIVILEGES;
 exit;
 ```

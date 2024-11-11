@@ -7,7 +7,7 @@ GRANT ALL PRIVILEGES ON databasename.* TO 'johndoe'@'10.20.20.%'; /* set user pr
 ```
 ### SHOW USERS
 ```sql
-SELECT User, Host FROM mysql.user;
+SELECT User, Host, Plugin FROM mysql.user;
 ```
 ### CREATE NEW USER
 ```sql

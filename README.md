@@ -26,10 +26,10 @@ GRANT ALL ON <dbname>.* TO 'user'@'10.20.14.%';
 GRANT RELOAD ON *.* TO 'user'@'10.20.14.%';
 FLUSH PRIVILEGES;
 FLUSH HOSTS;
-
+```
 VM IP Address: 10.20.14.% through VPN etc.
-
-nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```vim
+vi /etc/mysql/mysql.conf.d/mysqld.cnf
 
 #bind-address   = 127.0.0.1
 # bind-address    = 162.220.160.183 # VM IP Address, use 0.0.0.0 if not working

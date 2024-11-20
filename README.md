@@ -80,9 +80,13 @@ exit;
 ```vim
 $mysql -u root
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
+exit;
 ```
 ```vim
 $mysqladmin -uroot -p shutdown
+```
+```vim
+$service mysql start
 ```
 ### SHOW DATABASE SIZES IN MegaBytes
 ```sql

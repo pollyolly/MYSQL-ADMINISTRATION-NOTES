@@ -13,6 +13,10 @@ SELECT User, Host, Plugin FROM mysql.user;
 ```sql
 CREATE USER 'newuser'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd';
 ```
+Login with SSL Certificates
+```sql
+CREATE USER 'newuser'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'yourpasswd' REQUIRE SSL;
+```
 ### CREATE USER WITH REMOTE CONNECTION
 ```sql
 CREATE USER 'johndoe'@'10.20.20.%' IDENTIFIED BY 'password';

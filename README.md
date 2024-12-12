@@ -134,12 +134,12 @@ SELECT PLUGIN_TYPE, PLUGIN_STATUS, PLUGIN_NAME FROM INFORMATION_SCHEMA.PLUGINS;
 /* caching_sha2_password, mysql_native_password, auth_socket, sha256_password */
 ```
 Uninstall
-```vim
+```bash
 $service mysql stop
 $sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
 $sudo rm -rf /etc/mysql /var/lib/mysql
-$sudo apt autoremove  (remove unncessary packages)
-$sudo apt autoclean   (remove apt cache)
+$sudo apt autoremove  # (remove unncessary packages)
+$sudo apt autoclean   # (remove apt cache)
 ```
 ### BIN LOGs
 Delete old binlog if occupying large storage.

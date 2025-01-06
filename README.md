@@ -41,7 +41,7 @@ bind-address    = 0.0.0.0 #bind any address
 ```
 Test connection by specifying host IP.
 ```vim
-$mysql -h <VM-IP-Address> -uuser -p
+$mysql -h <VM-IP-Address> -uusername -p
 ```
 Allow Port
 ```vim

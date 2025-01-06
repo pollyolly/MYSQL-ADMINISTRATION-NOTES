@@ -110,7 +110,7 @@ Install
 ```vim
 $sudo apt update
 $sudo apt install mysql-server
-$sudo mysql_secure_installation
+$sudo mysql_secure_installation #Optional
 ```
 ```vim
 $mysql

@@ -171,7 +171,7 @@ $vi /etc/mysql/mysql.conf.d/mysqld.cnf
 table_definition_cache = 200
 table_open_cache = 215
 ```
-### Use Fulltext Search
+### FULLTEXT SEARCH
 ```vim
 [mysqld]
 ft_min_word_len=3

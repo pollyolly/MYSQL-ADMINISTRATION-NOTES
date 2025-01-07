@@ -171,6 +171,26 @@ $vi /etc/mysql/mysql.conf.d/mysqld.cnf
 table_definition_cache = 200
 table_open_cache = 215
 ```
+### Use Fulltext Search
+```vim
+[mysqld]
+ft_min_word_len=3
+ft_stopword_file=/path/to/stopword_file
+```
+```SQL
+CREATE TABLE user_tbl (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    nickname TEXT NOT NULL,
+    FULLTEXT (name, nickname)
+);
+
+ALTER TABLE user_tbl ADD FULLTEXT (name, nickname);
+
+SELECT * FROM user_tbl WHERE MATCH (name) AGAINST ('Satoshi');
+
+SELECT * FROM user_tbl WHERE MATCH(name, nickname) AGAINST('+Satoshi -Nakamoto' IN BOOLEAN MODE);
+```
 ### TROUBLESHOOTING
 Root password using Unix User Credentials (auth_socket)
 ```vim
